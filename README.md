@@ -57,3 +57,6 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```sh
 npm run lint
 ```
+
+### References
+* [awesone-vue](https://github.com/vuejs/awesome-vue#frameworks)
