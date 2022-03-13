@@ -11,8 +11,6 @@
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
-      {{ env }}
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -28,10 +26,15 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
 
 const env = import.meta.env;
+
+onMounted(() => {
+  console.log(env);
+});
 </script>
 
 <style lang="scss">
