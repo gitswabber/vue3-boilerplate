@@ -3,7 +3,6 @@
   <div class="about">
     <h3>counter by ref : {{ counterRef }}</h3>
     <h3>counter by store : {{ counter.count }}</h3>
-    <input v-model="message" placeholder="edit me" />
     <v-btn color="primary" @click="clickButton">BUTTON TEST</v-btn>
   </div>
 </template>
@@ -24,9 +23,9 @@ async function clickButton(e) {
   console.log("button click");
   console.log(e);
 
-  const aa = await todoApi.findTodos();
-  console.log("aa");
-  console.log(aa);
+  const todos = await todoApi.findTodos();
+  console.log("result");
+  console.log(todos);
   // axios.get("http://localhost:8080/todos").then((response: { data: any }) => {
   //   console.log(response.data);
   // });
