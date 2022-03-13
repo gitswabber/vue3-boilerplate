@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import vuetify from "@vuetify/vite-plugin";
+// import path from "path";
 
 // const path = require("path");
 
@@ -24,6 +25,7 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  envDir: "./environment",
   css: {
     preprocessorOptions: {
       scss: {

@@ -2,9 +2,10 @@
   "name": "vue3-boilerplate",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "local": "vite --mode=local",
+    "dev": "vite --mode=dev",
     "serve": "vite preview",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && vite build --mode=prod",
     "preview": "vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",

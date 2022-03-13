@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
-</script>
-
 <template>
   <header>
     <img
@@ -15,6 +10,8 @@ import HelloWorld from "@/components/HelloWorld.vue";
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+
+      {{ env }}
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -30,6 +27,13 @@ import HelloWorld from "@/components/HelloWorld.vue";
   </v-app>
 </template>
 
+<script setup lang="ts">
+import { RouterLink, RouterView } from "vue-router";
+import HelloWorld from "@/components/HelloWorld.vue";
+
+const env = import.meta.env;
+</script>
+
 <style lang="scss">
-@import "styles/app.css";
+@import "styles/views/app.css";
 </style>
