@@ -2,7 +2,7 @@
   "name": "vue3-boilerplate",
   "version": "0.0.0",
   "scripts": {
-    "local": "vite --mode=local",
+    "local": "vite",
     "dev": "vite --mode=dev",
     "serve": "vite preview",
     "build": "vue-tsc --noEmit && vite build --mode=prod",
