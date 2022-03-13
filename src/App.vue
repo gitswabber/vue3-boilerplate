@@ -23,9 +23,13 @@ import HelloWorld from "@/components/HelloWorld.vue";
     </div>
   </header>
 
-  <RouterView />
+  <v-app>
+    <v-main>
+      <RouterView />
+    </v-main>
+  </v-app>
 </template>
 
 <style lang="scss">
-@import "@/assets/app.css";
+@import "styles/app.css";
 </style>
