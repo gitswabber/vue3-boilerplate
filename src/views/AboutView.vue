@@ -9,17 +9,23 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, inject } from "vue";
 import { useCounterStore } from "@/stores/counter";
 
 const counterRef = ref(0);
 const counter = useCounterStore();
+
+const axios: any = inject("axios");
 
 function clickButton(e) {
   counterRef.value--;
   counter.increment();
   console.log("button click");
   console.log(e);
+
+  axios.get("http://localhost:8080/todos").then((response: { data: any }) => {
+    console.log(response.data);
+  });
 }
 </script>
 
