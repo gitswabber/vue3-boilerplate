@@ -1,8 +1,9 @@
 <template>
   <h1>This is an about page</h1>
-  <div>
+  <div class="about">
     <h3>counter by ref : {{ counterRef }}</h3>
     <h3>counter by store : {{ counter.count }}</h3>
+    <input v-model="message" placeholder="edit me" />
     <v-btn color="primary" @click="clickButton">BUTTON TEST</v-btn>
   </div>
 </template>
@@ -22,12 +23,6 @@ function clickButton(e) {
 }
 </script>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: contents;
-    align-items: center;
-  }
-}
+<style lang="scss">
+@import "../styles/views/about.css";
 </style>
