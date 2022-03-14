@@ -8,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+import "@/styles/views/about.scss";
 import { ref, inject } from "vue";
 import { useCounterStore } from "@/stores/counter";
 import todoApi from "@/script/api/todo-api";
@@ -31,7 +32,3 @@ async function clickButton(e) {
   // });
 }
 </script>
-
-<style lang="scss">
-@import "../styles/views/about.css";
-</style>

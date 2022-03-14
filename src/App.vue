@@ -38,5 +38,5 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import "styles/views/app.css";
+@import "styles/views/app";
 </style>
