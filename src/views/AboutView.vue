@@ -14,13 +14,14 @@
 
 <script setup lang="ts">
 import "@/styles/views/about.scss";
-import { ref, inject } from "vue";
+import { ref } from "vue";
 import { useCounterStore } from "@/stores/counter";
-import todoApi from "@/script/api/hello-api";
+import { HelloApiImpl } from "@/script/api/hello-api";
 
 const counterRef = ref(0);
 const counter = useCounterStore();
 const message = ref();
+let api = new HelloApiImpl();
 
 function clickIncrementButton(e: any) {
   counterRef.value--;
@@ -30,7 +31,7 @@ function clickIncrementButton(e: any) {
 }
 
 async function clickHelloButton() {
-  message.value = await todoApi.sayHello();
+  message.value = await api.sayHello();
   console.log("result");
   console.log(message);
 }

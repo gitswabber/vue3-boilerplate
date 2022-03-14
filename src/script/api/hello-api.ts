@@ -1,13 +1,17 @@
 import axios from "axios";
 
-const HelloApi = {
-  sayHello() {
+export interface HelloApi {
+  sayHello(): any;
+}
+
+class HelloApiImpl implements HelloApi {
+  sayHello(): any {
     return axios
       .get(import.meta.env.VITE_API + "/hello")
       .then((response: { data: any }) => {
         return response.data;
       });
-  },
-};
+  }
+}
 
-export default HelloApi;
+export { HelloApiImpl };
