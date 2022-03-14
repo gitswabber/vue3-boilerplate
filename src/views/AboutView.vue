@@ -3,7 +3,12 @@
   <div class="about">
     <h3>counter by ref : {{ counterRef }}</h3>
     <h3>counter by store : {{ counter.count }}</h3>
-    <v-btn color="primary" @click="clickButton">BUTTON TEST</v-btn>
+    <v-btn color="primary" @click="clickIncrementButton">INCREMENT TEST</v-btn>
+    <div class="ma-5"></div>
+    <v-card elevation="1">
+      <v-card-text>{{ message ? message : "NO_MESSAGE" }}</v-card-text>
+    </v-card>
+    <v-btn color="success" @click="clickHelloButton">CLICK ME</v-btn>
   </div>
 </template>
 
@@ -11,24 +16,22 @@
 import "@/styles/views/about.scss";
 import { ref, inject } from "vue";
 import { useCounterStore } from "@/stores/counter";
-import todoApi from "@/script/api/todo-api";
+import todoApi from "@/script/api/hello-api";
 
 const counterRef = ref(0);
 const counter = useCounterStore();
+const message = ref();
 
-const axios: any = inject("axios");
-
-async function clickButton(e) {
+function clickIncrementButton(e: any) {
   counterRef.value--;
   counter.increment();
   console.log("button click");
   console.log(e);
+}
 
-  const todos = await todoApi.findTodos();
+async function clickHelloButton() {
+  message.value = await todoApi.sayHello();
   console.log("result");
-  console.log(todos);
-  // axios.get("http://localhost:8080/todos").then((response: { data: any }) => {
-  //   console.log(response.data);
-  // });
+  console.log(message);
 }
 </script>

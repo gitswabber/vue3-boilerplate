@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const TodoApi = {
-  findTodos() {
+const HelloApi = {
+  sayHello() {
     return axios
-      .get(import.meta.env.VITE_API + "/todos")
+      .get(import.meta.env.VITE_API + "/hello")
       .then((response: { data: any }) => {
         return response.data;
       });
   },
 };
 
-export default TodoApi;
+export default HelloApi;
