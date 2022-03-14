@@ -14,7 +14,6 @@ This project is consisted of the following packages.
 
 ## Architecture
 ```
-├─ cypress
 ├─ environment      // environment variables files.
 ├─ public           // static assets.
 ├─ src
@@ -24,9 +23,16 @@ This project is consisted of the following packages.
 │  ├─ router        // view's routers config.
 │  ├─ script        // script files.
 │  │  └─ api        // script files for backend api.
+│  │  └─ ...
 │  ├─ stores        // pinia store modules.
 │  ├─ styles        // css(scss) files.
+│  │  └─ components
+│  │  └─ views
+│  │  └─ ...
 │  └─ views         // pages.
+├─ test
+│  ├─ cypress       // tests for end to end.
+│  └─ unit          // tests for unit.
 ```
 
 ## Project Setup
